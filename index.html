@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Van Phan's Portfolio</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="shortcut icon" href="/media/powerfulGorilla.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <script src="portfolio.js"></script>
+</head>
+
+<body>
+    <div id="fullpage" onclick="exitFullPage()"></div>
+
+    <header>
+        <h1><a href="">Van Phan</a></h1>
+
+        <!-- hamburger menu -->
+        <div class="hamburger-container" onclick="hamburgerEffect(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+
+        <!-- nav bar -->
+        <nav>
+            <ul>
+                <li><a id="about-tab" href="#_content">About</a></li>
+                <li><a id="projects-tab" href="#_content">Personal Projects</a></li>
+                <li><a id="work-tab" href="#_content">Work Experience</a></li>
+                <li><a id="cert-tab" href="#_content">Certificates</a></li>
+                <li><a id="footer-tab" href="#footer">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="intro">
+            <!-- video in the background -->
+            <video preload="auto" poster autoplay="autoplay" loop="loop" muted="muted" width="auto">
+                <source src="portfolioMedia/Rock Bottom Trailer.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <!-- text above the background video -->
+            <div class="intro-text-container">
+                <b class="job-title">Game Developer</b>
+                <p class="skills">Unreal Engine C++ | Unity C# | Web NodeJS and React</p><br>
+                <div class="intro-text">
+                    <p>My name is Van. I have work experience as a <b>C# gameplay AI engineer</b> and a <b>teaching assistant</b> for: HTML/CSS/JS and C# algorithmns. In my free-time I enjoy programming systems for friends, clients, and myself to grow as a developer that helps people in the game development community. </p>
+                    
+                    <br>
+
+                    <p> I am a <b>student ambassador</b> of the IGM college of RIT. I handle scheduling and assisting in events for current and prospective students. (Most recent event: hosted a 12 hour game jam for over 30 incoming highschool students to develop a game based around the theme of social change.)</p>
+                    
+                    <br>
+
+                    <p>As a hobby, I compete as a ballroom dancer for a team in Rochester, New York. </p>
+                </div>
+            </div>
+            <!-- end of intro -->
+        </div>
+
+
+        <div id="content">
+            <div id="_content"></div>
+            <h2>About Me</h2>
+
+            <!-- about me section -->
+            <div class="container about-container">
+                <img src="media/mugShotSmall.jpg" alt="my photo">
+                <div class="about-text">
+                    <p> I started game development in at RIT's game development program in 2019 with close to zero coding experience. During my college experience I have developed school projects using <b>C#, C++, HLSL, Html, JavaScript, NodeJS and React</b>. My main focus is to develop C++ systems in <b>Unreal Engine</b>. </p>
+
+                    <br>
+
+                    <p> I've supplemented my learning for game development outside of classes by earning certifications for <b>Unity C#, Unreal C++/Blueprints, and Math</b>. I've also spent time learning the adjacent systems to game programming: composing<b> using Ableton, Audacity, and Wwise</b>, and creating art via <b> using Photoshop, Blender, and Maya</b>.</p>
+
+                    <br>
+                    
+                    <p> My goals are: <b>to develop gameplay systems using my strong understanding of programming, mathematics, and game engine knowledge</b>. </p>
+                </div>
+            </div>
+
+            <div class="container project-container inactive">
+                
+                <!-- Unreal Projects 3 L R-->
+                <div class="content-item personal-project">
+                    <div class="content-item-text">
+                        <h3>Unreal Client Projects (UE 5 C++)</h3>
+                        <p> During my winter break of my senior year of college I decided I would get a certificate in Unreal C++ development. I wanted to prove to myself that if a client of mine wanted a particular game developed I would be able to complete the request in a timely manner and also use strong S.O.L.I.D principles for system development. I reached out to a handful of collegeues who agreed to design game ideas and create art/music assets. In exchange I would develop their requests in Unreal using the C++ pipeline.</p> 
+                        <br>
+                        <p>Over the span of the spring semester of 2023 I developed: </p> 
+                        <br>
+                        <p>●	A 1st person platforming game where the main character can wall run, teleport, and double jump. A checkpoint system setup. Since this project was made for an audio engineer, I developed the system to expansable from a blueprints approach so that my team member can easily work in tandum with me without needing to be overwhelmed by looking at all the code.</p>
+                        <br>
+                        <p>●	A 3rd person FPS which replicates the throwing mechanic from the game "Control". This project was used to help me understand how to develop a C++ for a colleague whos main focus was on VFX systems.</p>
+                        <br>
+                        <p>●	A 2.5D puzzle game where you utilize roots to connect other fungal colonies while traversing through the world's terrain. This project was espcially challenging since I had to override Unreal's default spline system to work as a modular component that would allow the artist to pass in their own assets and would use these assets to regenerate roots at runtime. 
+                        </p>
+                        
+                        <button class="inline-btn"><a href="https://www.youtube.com/watch?v=Ug5OXSC6Xqk" target="blank">Watch Demo</a></button>
+                    </div>
+                    <div class="content-item-img" style="background-image: url(media/reclaimedPNG.png); aspect-ratio: 1162/758;">
+                        <button class="video-btn video-btn-try1 inactive"><a href="https://www.youtube.com/watch?v=Ug5OXSC6Xqk" target="blank"><i class="fa fa-play"></i> Watch Demo</a>
+                        </button>
+                    </div>
+                </div>
+
+                <hr>
+
+                <!-- Unity Client 1 R L -->
+                <div class="content-item personal-project">
+                    <div class="content-item-img" style="background-image: url(media/MainCharacterAnimalDungeon.png); aspect-ratio:732/432;">
+                        <button class="video-btn video-btn-try1 inactive"><a href="https://www.youtube.com/watch?v=-FirlV8rdQ8" target="blank"><i class="fa fa-play"></i> Watch Demo</a></button>
+                    </div>
+
+                    <div class="content-item-text">
+                        <h3>Unity Client Project (C#)</h3>
+                        <p>During my spring semester of 2023 I was requested to help represent Magic Spell Studios at PAX East 2023. While I was there I meet old colleagues of mine who wanted assistance in developing their next game they wanted to published. The game is a 2D zelda inspired game. 
+                        </p>
+                        <br>
+                        <p>My current contributions include: </p> 
+                        <br>
+                        <p>●	Setting up a character ability system to use an interface that would allow designers/developers to drag and drop any abilities in the 4 respective ability slots.  </p>
+                        <p>●	A ranged weapon system that uses a projectile interface to handle object pooling with whatever projectile types the team designs.</p>
+                        <p>●	A dynamic room system which allowed scenes to be additively loaded in and out upon entering/exiting entry points, with the objective of allowing designers to be able to work on multiply scenes at the same time and reduce computation of loading unneccessary scenes. </p>
+                        <button class="inline-btn"><a href="https://www.youtube.com/watch?v=-FirlV8rdQ8" target="blank">Watch Demo</a></button>
+                    </div>
+                </div>
+                <hr>
+
+                <!-- Physics Engine L R -->
+                <div class="content-item personal-project">
+                    <div class="content-item-text">
+                        <h3>Physics Engine (C++ and HLSL)</h3>
+                        <p>During my junior year of college, I took a class that focused on the development of common game engine systems using C++ and HLSL. The class really helped me understand the many systens underneath most game engines. Over the course of the entire class I worked on one primary project where I developed: </p>
+
+                        <br>
+
+                        <p>●	A game engine that took in .fbx files and parsed that data into points for the computer to calculate out triangles and visualize the object.</p>
+                        <p>●	A simple render pipeline that took in HLSL data, materials, shaders, textures, normals, and light maps. Using the feed in data it would apply these desired changeds onto a specific mesh.</p>
+                        <p>●	A game object system that would allow meshes to have transforms and translation which could be updated at runtime.</p>
+                        <p>●	A camera system to utilized culling for optimization. Contained movement and rotation, allowing the user to fully view 3D objects.</p>
+                        <p>●	A light system to allow for interaction with spot lights, directional lights, spot lights, diffusion, and specular data.</p>
+                        <button class="inline-btn"><a href="https://www.youtube.com/watch?v=TiyLBcGAVo4" target="blank">Watch Demo</a></button>
+                    </div>
+                    <div class="content-item-img" style="background-image: url(media/physicsEngine.png); aspect-ratio:650/600;">
+                        <button class="video-btn video-btn-try1 inactive"><a href="https://www.youtube.com/watch?v=TiyLBcGAVo4" target="blank"><i class="fa fa-play"></i> Watch Demo</a></button>
+                    </div>
+                </div>
+
+                <hr>
+
+                <!-- Shrine R L -->
+                <div class="content-item personal-project">
+                    <div class="content-item-img" style="background-image: url(media/Shrine.png); aspect-ratio:732/432;">
+                        <button class="video-btn video-btn-try1 inactive"><a href="https://www.youtube.com/watch?v=8bc8N26l-mM" target="blank"><i class="fa fa-play"></i> Watch Demo</a></button>
+                    </div>
+                    <div class="content-item-text">
+                        <h3>Shrine of Radiance (UE5 Blueprints)</h3>
+                        <p>Shrine of Radiance is Unreal Engine Blueprints project I developed over my winter break of my Junior year of college based off the online course "Game Dev Unlocked". The course helped me develop a baseline understanding of Unreal Engine's main systems. I decided to use this project during my spring semester for my composing for video games class. The results I got from the project were:</p>
+                        <br>
+                        <p>●	A simple first person puzzle game where the player had to bounce around lasers to hit goals and move onto new levels.</p>
+                        <p>●	Over 10 puzzle areas designed using nanite assets for the quixel bridge marketplace.</p>
+                        <p>●	A dynamic music system that changed based off progress into the game using metasounds.</p>
+                        <p>●	Self developed music using Ableton Live.</p>
+                        <p>●	A checkpoint system.</p>
+
+                        <button class="inline-btn"><a href="https://www.youtube.com/watch?v=8bc8N26l-mM" target="blank">Watch Demo</a></button>
+                    </div>
+                </div>
+
+                <hr>
+
+                <!-- Peace L R -->
+                <div class="content-item personal-project">
+                    <div class="content-item-text">
+                        <h3>Peace of Mind (Unity)</h3>
+                        <p>Peace of mind is a walking-sim where you activate generators to escape society. I created the project during the summer of my softmore year of college, which was based off the online course "Game Dev Unlocked". I used the concepts learned from this project to demonstrate my understanding of Unity and secure my first job in the game dev industry. What I accomplished was:</p>
+                        <br>
+                        <p>●	Created a open world level experience using assets from the Unity Marketplace.</p>
+                        <p>●	Used built in Unity tools: terrain generation, foliage system, post-processing, lighting, VFX, etc. to enhance the visuals of the world.</p>
+                        <p>●	Created and editted art assets in photoshop and blender/maya.</p>
+                        <p>●	Created voice-over clips in audacity and adobe audition.</p>
+                        <button class="inline-btn"><a href="https://youtu.be/6QDzyR_U28M" target="blank">Watch Demo</a></button>
+                        <button class="inline-btn"><a href="https://vanphan.itch.io/peace-of-mind" target="blank">itch.io link</a></button>
+                    </div>
+                    <div class="content-item-img" style="background-image: url(media/PeaceOfMindCover.png); aspect-ratio:650/600;">
+                        <button class="video-btn video-btn-try1 inactive"><a href="https://youtu.be/6QDzyR_U28M" target="blank"><i class="fa fa-play"></i> Watch Demo</a></button>
+                    </div>
+                </div>
+
+                <hr>
+
+                <!-- Curly R L -->
+                <div class="content-item personal-project">
+                    <div class="content-item-img" style="background-image: url(media/curlyBrackets.jpg); aspect-ratio:732/432;">
+                        <button class="video-btn video-btn-try1 inactive"><a href="https://www.youtube.com/watch?v=d-wB6MSkaTA" target="blank"><i class="fa fa-play"></i> Watch Demo<a><button>
+                    </div>
+                    <div class="content-item-text">
+                        <h3>Curly Brackets (C#)</h3>
+                        <p>Curly Brackets is a school group project that was developed my spring semester of my freshman year of college. The game is a tower defense that has an external tool to develop maps and enemy waves outside of the main project. Amongst my collegeues I developed: </p>
+                        <br>
+                        <p>●	The tower interactions and upgrade paths.</p>
+                        <p>●	The enemy path finding system.</p>
+                        <p>●	The data parser which takes information from the external tool to create levels.</p>
+                        <button class="inline-btn"><a href="https://www.youtube.com/watch?v=d-wB6MSkaTA" target="blank">Watch Demo</a></button>
+                        <button class="inline-btn"><a href="https://vanphan.itch.io/curlybrackets" target="blank">itch.io link</a></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container work-container inactive">
+                <!-- GOAT AI L R-->
+                <div class="content-item work-experience">
+
+                    <div class="content-item-text">
+                        <h3>Magic Spell Studios AI Engineer</h3>
+                        <p>During my time at Magic Spell Studios I started as a gameplay developer and they slowly migrated me to a full-time position as an AI developer. I worked with teams for audio and art, proactively integrating their work into the project while handling my own task. During my time of the team I worked on: </p>
+                        <br>
+                        <p>●	Re-developed AI system to use a behavior tree system. Designed the architecture and system direction in lucid chart.</p>
+                        <p>●	Resolved over 30 gameplay bugs in the code base (system crash, incorrect character/item behavior, and UI bugs). </p>
+                        <p>●	Developed the UML graph in lucid chart to visualize all the systems in the project (over 140 systems)</p>
+                        <p>●	Removed over 60 scripts from and their dependencies to clean up development environment for engineers.</p>
+                        <button class="inline-btn"><a href="https://www.youtube.com/watch?v=UEyrjRRjBVA" target="blank">Watch Demo</a></button>
+                    </div>
+                    <div class="content-item-img" style="background-image: url(media/TDG.png); aspect-ratio:1291/650;">
+                        <button class="video-btn video-btn-try1 inactive"><a href="https://www.youtube.com/watch?v=UEyrjRRjBVA" target="blank"><i class="fa fa-play"></i> Watch Demo</a></button>
+                    </div>
+                </div>
+                <hr>
+
+                <!--TA Web R L-->
+                <div class="content-item work-experience">
+                    <!-- <img class="content-item-img" src="media/crimsonEstateGameplay.png"> -->
+                    <div class="content-item-img" style="background-image: url(media/webTA.jpg); aspect-ratio:428/232 !important;">
+                        <button class="video-btn video-btn-try1 inactive"><a href="https://www.rit.edu/study/curriculum/bc216712-af82-435a-b920-18ae71de747c" target="blank"><i class="fa fa-play"></i>Curriculum</a></button>
+                    </div>
+                    <div class="content-item-text">
+                        <h3>Teaching Assistant (Web development)</h3>
+                        <p>During my junior year of college I worked part-time as a web developer. My responsibities included: </p>
+                        <br>
+                        <p>●	Assisting over 50 students in learning: Html, CSS, JS programming, and developing portfolio sites and web apps.</p>
+                        <p>●	Grading student's work on a weekly basis, providing individualized feedback and extra assistance on subjects.</p>
+                        <button class="inline-btn"><a href="https://www.rit.edu/study/curriculum/bc216712-af82-435a-b920-18ae71de747c" target="blank">Curriculum</a></button>
+                    </div>
+                </div>
+                <hr>
+
+                <!-- TA 105 L R-->
+                <div class="content-item work-experience">
+
+                    <div class="content-item-text">
+                        <h3>Teaching Assistant (Data-structures and algorithmns for C#)</h3>
+                        <p>During my junior year of college I wanted to gain some experience teaching the foundations of C# in order to sharpen my own understanding of the foundational systems. Helping the students also helped me solidify my own understanding of math concepts at the time. My overall responsibities included:
+                        </p>
+                        <br>
+                        <p>●	Assisted 30 students in learning: version control, C# MonoGame pipeline, data structures, and search algorithms. </p>
+                        <p>●	Grading student's work on a weekly basis and helped students architecture systems for semester long group projects.</p>
+                        <button class="inline-btn"><a href="https://www.rit.edu/study/curriculum/bc216712-af82-435a-b920-18ae71de747c" target="blank">Curriculum</a></button>
+                    </div>
+                    <div class="content-item-img" style="background-image: url(media/datastructuresTA.jpg); aspect-ratio:1291/650;">
+                        <button class="video-btn video-btn-try1 inactive"><a href="https://www.rit.edu/study/curriculum/bc216712-af82-435a-b920-18ae71de747c" target="blank"><i class="fa fa-play"></i>Curriculum</a></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container cert-container inactive">
+                <img src="media/c1.png" alt="udemy certificate" onclick="zoomIn(this)">
+                <img src="media/c2.png" alt="udemy certificate" onclick="zoomIn(this)">
+                <img src="media/c3.png" alt="udemy certificate" onclick="zoomIn(this)">
+                <img src="media/c4.png" alt="udemy certificate" onclick="zoomIn(this)">
+                <img src="media/c5.png" alt="udemy certificate" onclick="zoomIn(this)">
+            </div>
+
+        </div>
+    </main>
+
+
+    <footer id="footer">
+        <div class="connect-info">
+            <span><a href="mailto:vap7761@g.rit.edu">vap7761@g.rit.edu</a></span>
+            <span>(814) 873 - 1225</span>
+            <span><a href="https://www.linkedin.com/in/vanphan2019/" target="blank">LinkedIn</a></span>
+            <span><a href="/resume/VanPhan_Resume.pdf" target="blank">Resume</a></span>
+        </div>
+        <p>&copy; 2023 Van Phan</p>
+    </footer>
+</body>
+</html>
