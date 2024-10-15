@@ -1,4 +1,4 @@
-// variabels
+// variables
 let selectedContent = "";
 let aboutTab;
 let projectsTab;
@@ -19,9 +19,13 @@ let currScrollY;
 let allImages;
 let videoBtns;
 
+// Carousel variables
+let currentIndex = 0;
+let videos;
+
 // called when the page loads
 const init = () => {
-    // elements clikced on to show the according container
+    // elements clicked on to show the according container
     aboutTab = document.getElementById("about-tab");
     projectsTab = document.getElementById("projects-tab");
     workTab = document.getElementById("work-tab");
@@ -38,6 +42,9 @@ const init = () => {
     // buttons
     videoBtns = document.querySelectorAll(".video-btn");
 
+    // Carousel setup
+    videos = document.querySelectorAll('.carousel-video');
+
     // all individual containers
     aboutMe = document.querySelector(".about-container");
     personalProjects = document.querySelector(".project-container");
@@ -49,7 +56,26 @@ const init = () => {
 
     selectedContent = aboutMe;
 
-    // add event listeners
+    // Carousel event listeners
+    document.querySelector('.carousel-prev').addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+        } else {
+            currentIndex = videos.length - 1;
+        }
+        updateCarousel();
+    });
+
+    document.querySelector('.carousel-next').addEventListener('click', () => {
+        if (currentIndex < videos.length - 1) {
+            currentIndex++;
+        } else {
+            currentIndex = 0;
+        }
+        updateCarousel();
+    });
+
+    // Add event listeners
     window.addEventListener('resize', function(e) {
         // if it's mobile size, add 'inactive' so that the menu won't show 
         if (mobile()) {
@@ -67,7 +93,7 @@ const init = () => {
         }
     });
 
-    //  event for the project images
+    // Event for the project images
     allImages.forEach(i => {
         let btn = i.querySelector("button");
 
@@ -75,16 +101,16 @@ const init = () => {
             if (btn.classList.contains("inactive")) {
                 btn.classList.remove("inactive");
             }
-        })
+        });
 
         i.addEventListener("mouseout", () => {
             if (!btn.classList.contains("inactive")) {
                 btn.classList.add("inactive");
             }
-        })
-    })
+        });
+    });
 
-    // about tab click event
+    // About tab click event
     aboutTab.addEventListener("click", () => {
         console.log("aboutTab onclick");
         if (mobile()) {
@@ -101,43 +127,43 @@ const init = () => {
             toggleInactive(aboutMe);
         }
         contentTitle.innerHTML = "About Me";
-    })
+    });
 
-    // personal projects tab click event
-    projectsTab.addEventListener("click", () => {
-        console.log("projectsTab onclick");
-        if (mobile()) {
-            closeNav();
-        }
+    // Personal projects tab click event
+    // projectsTab.addEventListener("click", () => {
+    //     console.log("projectsTab onclick");
+    //     if (mobile()) {
+    //         closeNav();
+    //     }
 
-        setGrayBg();
+    //     setGrayBg();
 
-        if (selectedContent != "") {
-            toggleInactive(selectedContent);
-        }
-        selectedContent = personalProjects;
-        toggleInactive(personalProjects);
-        contentTitle.innerHTML = "Personal Projects";
-    })
+    //     if (selectedContent != "") {
+    //         toggleInactive(selectedContent);
+    //     }
+    //     selectedContent = personalProjects;
+    //     toggleInactive(personalProjects);
+    //     contentTitle.innerHTML = "Personal Projects";
+    // });
 
-    // work experience tab click event
-    workTab.addEventListener("click", () => {
-        console.log("workTab onclick");
-        if (mobile()) {
-            closeNav();
-        }
+    // // Work experience tab click event
+    // workTab.addEventListener("click", () => {
+    //     console.log("workTab onclick");
+    //     if (mobile()) {
+    //         closeNav();
+    //     }
 
-        setGrayBg();
+    //     setGrayBg();
 
-        if (selectedContent != "") {
-            toggleInactive(selectedContent);
-        }
-        selectedContent = workExperiences;
-        toggleInactive(workExperiences);
-        contentTitle.innerHTML = "Work Experience";
-    })
+    //     if (selectedContent != "") {
+    //         toggleInactive(selectedContent);
+    //     }
+    //     selectedContent = workExperiences;
+    //     toggleInactive(workExperiences);
+    //     contentTitle.innerHTML = "Work Experience";
+    // });
 
-    // certificate tab click event
+    // Certificate tab click event
     certTab.addEventListener("click", () => {
         console.log("certTab onclick");
         if (mobile()) {
@@ -152,10 +178,9 @@ const init = () => {
         selectedContent = certificates;
         toggleInactive(certificates);
         contentTitle.innerHTML = "Certificates";
-    })
+    });
 
-
-    // contact tab click event
+    // Contact tab click event
     contactTab.addEventListener("click", () => {
         console.log("contactTab onclick");
         if (mobile()) {
@@ -163,9 +188,9 @@ const init = () => {
         }
 
         setGrayBg();
-    })
+    });
 
-    // if the screen size is mobile, add 'inactive' to nav's classlist
+    // If the screen size is mobile, add 'inactive' to nav's classlist
     if (mobile()) {
         if(!nav.classList.contains('inactive')){
             toggleInactive(nav);
@@ -173,51 +198,55 @@ const init = () => {
     }
 }
 
-// check if the device screen size is mobile
+// Check if the device screen size is mobile
 function mobile() {
-    if (window.innerWidth <= 800) {
-        return true;
-    }
-    return false;
+    return window.innerWidth <= 800;
 }
 
-// add or remove 'inactive' from the classlist of the passed in element
+// Add or remove 'inactive' from the classlist of the passed in element
 const toggleInactive = (content) => {
     content.classList.toggle("inactive");
 }
 
-// switch between hamburger and the x
+// Update the carousel display
+function updateCarousel() {
+    const offset = -currentIndex * 100;
+    videos.forEach(video => {
+        video.style.transform = `translateX(${offset}%)`;
+    });
+}
+
+// Switch between hamburger and the x
 function hamburgerEffect(x) {
     x.classList.toggle("change");
     toggleInactive(nav);
 }
 
-// close up the nav bar once a selection is made or when the x is clicked
+// Close the nav bar once a selection is made or when the x is clicked
 function closeNav() {
     hamburgerContainer.classList.toggle("change");
     toggleInactive(nav);
 }
 
-// zoom in on the image clicked 
+// Zoom in on the image clicked 
 function zoomIn(img) {
-    // store the original position where you clicked on the image
+    // Store the original position where you clicked on the image
     currScrollY = window.scrollY;
 
-    // assign the img src to the fullpage background image to display it
+    // Assign the img src to the fullpage background image to display it
     fullPage.style.backgroundImage = 'url(' + img.src + ')';
     fullPage.style.display = 'block';
 
-    // scroll to the top of the page because the fullpage div is at the top of the page
+    // Scroll to the top of the page because the fullpage div is at the top of the page
     window.scrollTo(0, 0);
 }
 
-
-// exit full page view when clicked on it again
+// Exit full page view when clicked on it again
 function exitFullPage() {
-    // remove the full screen image from display
+    // Remove the full screen image from display
     fullPage.style.display = 'none';
 
-    // scroll to the original position where you clicked on the image
+    // Scroll to the original position where you clicked on the image
     window.scrollTo(0, currScrollY);
 }
 
